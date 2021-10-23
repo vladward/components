@@ -7,18 +7,17 @@ import {Rating} from './components/Rating/Rating'
 function App() {
     return (
         <div>
-            {/*<PageTitle title={"MyFriends"} />*/}
-            {/*<PageTitle title={"Welcome to my app"} />*/}
+            <PageTitle title={"MyFriends"} />
+            <PageTitle title={"Welcome to my app"} />
 
-            {/*<Accordion titleValue={"Menu"} collapsed={false} />*/}
-            {/*<Accordion titleValue={"Users"} collapsed={true} />*/}
+            <Accordion titleValue={"Menu"} />
 
-            {/*<Rating value={0}/>*/}
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={2}/>*/}
-            {/*<Rating value={3}/>*/}
-            {/*<Rating value={4}/>*/}
-            {/*<Rating value={5}/>*/}
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
 
             <OnOff />
             <OnOff />
