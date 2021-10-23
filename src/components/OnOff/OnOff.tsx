@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 
 type onType = {
-    on: boolean
+    //on: boolean
 }
 
 const OnOff = (props: onType) => {
