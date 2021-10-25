@@ -1,27 +1,27 @@
-import React, {useState} from "react"
+import React from "react"
 
 type onType = {
-    //on: boolean
+    value: boolean
+    onClick: (value: boolean) => void
 }
 
 const OnOff = (props: onType) => {
-
-    const [on, setOn] = useState(false)
-
     const styleOn = {
         width: "30px",
         height: "30px",
         border: "1px solid black",
         display: "inline-block",
         marginRight: "5px",
-        backgroundColor: on ? "green" : "red"
+        backgroundColor: props.value ? "green" : "white",
+        cursor: "pointer"
     }
     const styleOff = {
         width: "30px",
         height: "30px",
         border: "1px solid black",
         display: "inline-block",
-        backgroundColor: on ? "red" : "green"
+        backgroundColor: props.value ? "white" : "red",
+        cursor: "pointer"
 
     }
     const styleIndicator = {
@@ -31,13 +31,13 @@ const OnOff = (props: onType) => {
         borderRadius: "50%",
         display: "inline-block",
         marginLeft: "10px",
-        backgroundColor: on ? "green" : "red"
+        backgroundColor: props.value ? "green" : "red"
     }
 
     return (
         <div>
-            <div style={styleOn} onClick={ () => setOn(true)}>On</div>
-            <div style={styleOff} onClick={ () => setOn(false)}>Off</div>
+            <div style={styleOn} onClick={ () => props.onClick(!props.value)}>On</div>
+            <div style={styleOff} onClick={ () => props.onClick(!props.value)}>Off</div>
             <div style={styleIndicator}></div>
         </div>
     )
