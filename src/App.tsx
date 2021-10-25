@@ -10,7 +10,7 @@ function App() {
             <PageTitle title={"MyFriends"} />
             <PageTitle title={"Welcome to my app"} />
 
-            <Accordion titleValue={"Menu"} />
+            <Accordion titleValue={"Clickable Menu"} />
 
             <Rating />
             <Rating />

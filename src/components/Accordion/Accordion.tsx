@@ -1,10 +1,11 @@
 import React, {useState} from "react"
 
 type AccordionPropsType = {
-    titleValue: string,
+    titleValue: string
 }
 type AccordionTitlePropsValue = {
     title: string
+    onClick: () => void
 }
 
 function Accordion(props: AccordionPropsType) {
@@ -13,15 +14,14 @@ function Accordion(props: AccordionPropsType) {
 
     return (
         <div>
-            <AccordionTitle title={props.titleValue}/>
-            <button onClick={ () => setCollapsed(!collapsed) }>TOGGLE</button>
+            <AccordionTitle title={props.titleValue} onClick={ () => setCollapsed(!collapsed) }/>
             {collapsed && <AccordionBody/>}
         </div>
     )
 }
 
 function AccordionTitle(props: AccordionTitlePropsValue) {
-    return <h3>{props.title}</h3>
+    return <h3 onClick={() => { props.onClick() }}>{props.title}</h3>
 }
 
 function AccordionBody() {
