@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './App.css'
-import Accordion from './components/Accordion/Accordion'
-import OnOff from './components/OnOff/OnOff';
+import {Accordion} from './components/Accordion/Accordion'
+import {OnOff} from './components/OnOff/OnOff';
 import {Rating, RatingValueType} from './components/Rating/Rating'
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
             <PageTitle title={"MyFriends"} />
             <PageTitle title={"Welcome to my app"} />
 
-            <Accordion titleValue={"Clickable Menu"} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
+            <Accordion titleValue={"Clickable Menu"} collapsed={accordionCollapsed} onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <OnOff value={on} onChange={setOn}/>
         </div>
