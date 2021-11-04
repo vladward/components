@@ -16,7 +16,7 @@ function App() {
 
             <Accordion titleValue={"Clickable Menu"} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <OnOff value={on} onClick={setOn}/>
+            <OnOff value={on} onChange={setOn}/>
         </div>
     );
 }

@@ -1,8 +1,8 @@
 import React from "react"
 
-type onType = {
+export type onType = {
     value: boolean
-    onClick: (value: boolean) => void
+    onChange: (value: boolean) => void
 }
 
 const OnOff = (props: onType) => {
@@ -36,8 +36,8 @@ const OnOff = (props: onType) => {
 
     return (
         <div>
-            <div style={styleOn} onClick={ () => props.onClick(!props.value)}>On</div>
-            <div style={styleOff} onClick={ () => props.onClick(!props.value)}>Off</div>
+            <div style={styleOn} onClick={ () => props.onChange(!props.value)}>On</div>
+            <div style={styleOff} onClick={ () => props.onChange(!props.value)}>Off</div>
             <div style={styleIndicator}></div>
         </div>
     )
