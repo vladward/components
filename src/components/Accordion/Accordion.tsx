@@ -21,7 +21,7 @@ export function Accordion(props: AccordionPropsType) {
 }
 
 function AccordionTitle(props: AccordionTitlePropsValue) {
-    return <h3 onClick={(e) => props.onChange()}>
+    return <h3 style={{ cursor: 'pointer' }} onClick={(e) => props.onChange()}>
         {props.title}
     </h3>
 }
