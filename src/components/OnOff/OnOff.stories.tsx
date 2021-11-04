@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import OnOff, {onType} from "./OnOff";
+import {OnOff} from "./OnOff";
 import {action} from "@storybook/addon-actions";
 
 export default {
