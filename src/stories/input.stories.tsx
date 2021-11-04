@@ -1,4 +1,5 @@
 import React, {ChangeEvent, useRef, useState} from "react"
+import {action} from "@storybook/addon-actions";
 
 export default {
     title: 'input stories',
@@ -14,7 +15,6 @@ export const TrackValueOfUncontrolledInput = () => {
     }
     return <> <input onChange={onChange}/> {value}</>
 }
-
 export const GetValueOfUncontrolledInputByButtonPress = () => {
     const [value, setValue] = useState('')
     const inputRef = useRef<HTMLInputElement>(null)
@@ -30,5 +30,16 @@ export const GetValueOfUncontrolledInputByButtonPress = () => {
         actual value - {value}
     </>
 }
+
+export const ControlledInput = () => {
+    const [parentValue, setParentValue] = useState('')
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setParentValue(e.currentTarget.value)
+    }
+
+    return <input value={parentValue} onChange={onChange}/>
+}
+
+
 
 export const ControlledInputWithFixedValue = () => <input value={'123'}/>
