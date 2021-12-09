@@ -1,6 +1,6 @@
 import React, {useCallback, useMemo, useState} from 'react';
 
-export const DifficultCountingExample = () => {
+export const UseMemoStories = () => {
     const [a, setA] = useState<number>(5)
     const [b, setB] = useState<number>(5)
     let resultA = 1

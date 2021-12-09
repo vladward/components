@@ -3,7 +3,7 @@ import './App.css'
 import {Accordion} from './components/Accordion/Accordion'
 import {OnOff} from './components/OnOff/OnOff';
 import {Rating, RatingValueType} from './components/Rating/Rating'
-import {DifficultCountingExample} from "./Memo/DifficultCountingExample";
+import {UseMemoStories} from "./Memo/UseMemo.stories";
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
             <Accordion titleValue={"Clickable Menu"} collapsed={accordionCollapsed} onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <OnOff value={on} onChange={setOn}/>
-            <DifficultCountingExample/>
+            <UseMemoStories/>
         </div>
     );
 }
