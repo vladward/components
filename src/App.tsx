@@ -15,7 +15,7 @@ function App() {
             <PageTitle title={"MyFriends"} />
             <PageTitle title={"Welcome to my app"} />
 
-            <Accordion titleValue={"Clickable Menu"} collapsed={accordionCollapsed} onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
+            <Accordion items={[]} onClick={() => {}} titleValue={"Clickable Menu"} collapsed={accordionCollapsed} onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <OnOff value={on} onChange={setOn}/>
             <UseMemoStories/>
