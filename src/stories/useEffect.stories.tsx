@@ -5,13 +5,33 @@ export default {
 }
 
 export const SimpleExample = () => {
+    const [fake, setFake] = useState(0)
     const [counter, setCounter] = useState(0)
     console.log('useEffect example')
 
-    useEffect(() => {}, [])
+    useEffect(() => {
+        //api.getUsers().then('')           |
+        //setInterval                       |
+        //indexedDB                         |side effects
+        //document.getElementById           |
+        //document.title = 'Vlad'           |
+        document.title = counter.toString()
+        console.log('useEffect every render')
+    })
+
+    useEffect(() => {
+        document.title = counter.toString()
+        console.log('useEffect only first render')
+    }, [])
+
+    useEffect(() => {
+        document.title = counter.toString()
+        console.log('useEffect first render and every counter change ')
+    }, [counter])
 
     return <>
-    <button onClick={() => setCounter(counter + 1 )}>+</button>
-        {counter}
+    <button onClick={() => setFake(fake + 1 )}>fake+</button>
+    <button onClick={() => setCounter(counter + 1 )}>counter+</button>
+        Hello {counter} {fake}
     </>
 }
