@@ -35,3 +35,31 @@ export const SimpleExample = () => {
         Hello {counter} {fake}
     </>
 }
+
+export const SimpleTimeoutExample = () => {
+    const [fake, setFake] = useState(0)
+    const [counter, setCounter] = useState(0)
+    console.log('useEffect SimpleTimeoutExample')
+
+    // useEffect(() => {
+    //     //api.getUsers().then('')           |
+    //     //setInterval                       |
+    //     //indexedDB                         |side effects
+    //     //document.getElementById           |
+    //     //document.title = 'Vlad'           |
+    //     document.title = counter.toString()
+    //     console.log('useEffect every render')
+    // })
+
+    setTimeout(() => {
+        console.log('setTimeout')
+        document.title = counter.toString()
+    }, 1000)
+
+
+    return <>
+    <button onClick={() => setFake(fake + 1 )}>fake+</button>
+    <button onClick={() => setCounter(counter + 1 )}>counter+</button>
+        Hello {counter} {fake}
+    </>
+}
