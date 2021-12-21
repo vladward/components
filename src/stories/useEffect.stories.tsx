@@ -51,10 +51,12 @@ export const SimpleTimeoutExample = () => {
     //     console.log('useEffect every render')
     // })
 
-    setTimeout(() => {
-        console.log('setTimeout')
-        document.title = counter.toString()
-    }, 1000)
+    useEffect(() => {
+        setTimeout(() => {
+            console.log('setTimeout')
+            document.title = counter.toString()
+        }, 1000)
+    }, [counter])
 
 
     return <>
