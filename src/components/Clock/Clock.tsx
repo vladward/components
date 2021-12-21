@@ -17,6 +17,7 @@ export const Clock: React.FC<PropsType> = (props) => {
                 console.log('tick')
                 setDate(new Date)
             }, 1000)
+        return () => {clearInterval(start)} // componentWillUnmount()
     }, [])
 
     return <div>
