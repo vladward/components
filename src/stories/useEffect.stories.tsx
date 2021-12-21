@@ -30,8 +30,8 @@ export const SimpleExample = () => {
     }, [counter])
 
     return <>
-    <button onClick={() => setFake(fake + 1 )}>fake+</button>
-    <button onClick={() => setCounter(counter + 1 )}>counter+</button>
+        <button onClick={() => setFake(fake + 1)}>fake+</button>
+        <button onClick={() => setCounter(counter + 1)}>counter+</button>
         Hello {counter} {fake}
     </>
 }
@@ -60,8 +60,37 @@ export const SimpleTimeoutExample = () => {
 
 
     return <>
-    <button onClick={() => setFake(fake + 1 )}>fake+</button>
-    <button onClick={() => setCounter(counter + 1 )}>counter+</button>
+        <button onClick={() => setFake(fake + 1)}>fake+</button>
+        <button onClick={() => setCounter(counter + 1)}>counter+</button>
         Hello {counter} {fake}
+    </>
+}
+
+export const SimpleIntervalExample = () => {
+    const [fake, setFake] = useState(1)
+    const [counter, setCounter] = useState(1)
+    console.log('useEffect SimpleIntervalExample')
+
+    // useEffect(() => {
+    //     //api.getUsers().then('')           |
+    //     //setInterval                       |
+    //     //indexedDB                         |side effects
+    //     //document.getElementById           |
+    //     //document.title = 'Vlad'           |
+    //     document.title = counter.toString()
+    //     console.log('useEffect every render')
+    // })
+
+    useEffect(() => {
+        setInterval(() => {
+            console.log('tick' + counter)
+            setCounter(state => state + 1)
+        }, 1000)
+    }, [])
+
+
+    return <>
+        Hello, counter : {counter}
+        Hello, fake : {fake}
     </>
 }
