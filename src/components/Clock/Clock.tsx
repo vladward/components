@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from "react"
+import {DigitalClock} from "./DigitalClock/DigitalClock";
+import {AnalogClock} from "./AnalogClock/AnalogClock";
 
-type PropsType = {}
-
-const GetTime = (number: number) => {
-    return number < 10
-        ? '0' + number
-        : number
+type PropsType = {
+    mode?: 'digital' | 'analog'
 }
 
 export const Clock: React.FC<PropsType> = (props) => {
@@ -20,11 +18,21 @@ export const Clock: React.FC<PropsType> = (props) => {
         return () => {clearInterval(start)} // componentWillUnmount()
     }, [])
 
+    let clockMode;
+    switch(props.mode) {
+        case "analog":
+            clockMode = <AnalogClock date={date}/>
+            break;
+        case "digital":
+        default:
+            clockMode = <DigitalClock date={date}/>
+    }
+
     return <div>
-        <span>{GetTime(date.getHours())}</span>
-        :
-        <span>{GetTime(date.getMinutes())}</span>
-        :
-        <span>{GetTime(date.getSeconds())}</span>
+        {clockMode}
     </div>
+}
+
+export type ClockPropsType = {
+    date: Date
 }
