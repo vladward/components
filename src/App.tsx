@@ -4,6 +4,7 @@ import {Accordion} from './components/Accordion/Accordion'
 import {OnOff} from './components/OnOff/OnOff';
 import {Rating, RatingValueType} from './components/Rating/Rating'
 import {UseMemoStories} from "./Memo/UseMemo.stories";
+import {Clock} from "./components/Clock/Clock";
 
 function App() {
 
@@ -19,6 +20,8 @@ function App() {
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <OnOff value={on} onChange={setOn}/>
             <UseMemoStories/>
+            <Clock mode={"analog"}/>
+            <Clock mode={"digital"}/>
         </div>
     );
 }
